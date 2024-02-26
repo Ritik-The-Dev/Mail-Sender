@@ -13,7 +13,7 @@ app.listen(PORT,'0.0.0.0',() => {
   console.log(`server running on port ${PORT}`);
 });
 
-app.post("/sendMail",async(req,res)=>{
+app.post("/",async(req,res)=>{
     try{
         const {name,email,message} = req.body;
         const transporter = nodeMailer.createTransport({
@@ -39,7 +39,4 @@ app.post("/sendMail",async(req,res)=>{
     catch(err){
         return res.json({msg:`Somethng Went Wrong ${err}`})
     }
-})
-app.get("/",(req,res)=>{
-  res.send("This is a Email Sender API")
 })
