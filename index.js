@@ -40,3 +40,29 @@ app.post("/",async(req,res)=>{
         return res.json({msg:`Somethng Went Wrong ${err}`})
     }
 })
+
+app.get("/getData",async(req,res)=>{
+  try{
+      res.status(200).json({
+      message:`You Fetched the route successfully.`,
+      data:{name:"Ritik"},
+      success:true,
+    });
+  }
+  catch(err){
+      return res.json({msg:`Somethng Went Wrong ${err}`})
+  }
+})
+
+app.get("/getData",async(req,res)=>{
+  try{
+    const{name} = req.body
+      res.status(200).json({
+      message:`${name} fetched the route successfully.`,
+      success:true,
+    });
+  }
+  catch(err){
+      return res.json({msg:`Somethng Went Wrong ${err}`})
+  }
+})
