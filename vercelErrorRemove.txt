@@ -1,0 +1,12 @@
+if that vercel file doesn't work use it it will work only for main link 
+{Only This Router will work with it
+Ex-> app.post('/',(req,res)=>{
+
+})}
+
+ {
+     "version": 2,
+     "name": "native-server",
+     "builds": [{ "src": "index.js", "use": "@vercel/node" }],
+     "routes": [{ "src": "/(.*)", "dest": "/index.js" }]
+   }
