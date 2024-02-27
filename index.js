@@ -15,7 +15,7 @@ app.listen(PORT,'0.0.0.0',() => {
 
 app.post("/",async(req,res)=>{
     try{
-        const {name,email,message} = req.body;
+        const {to,name,email,message} = req.body;
         const transporter = nodeMailer.createTransport({
             host:process.env.MAIL_HOST,
             auth:{
@@ -25,7 +25,7 @@ app.post("/",async(req,res)=>{
           })
             await transporter.sendMail({
               from:`${name}`,
-              to:'joshiritik175@gmail.com',
+              to:`${to}`,
               subject:`${name} Contacted You`,
               html: `<p>Email -: ${email}  <br><h4>${message}</h4>
               <br> Sended by ${name}</p><br>`
