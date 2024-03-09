@@ -28,7 +28,8 @@ app.post("/",async(req,res)=>{
               to:`${to}`,
               subject:`${name} Contacted You`,
               html: `<p>Email -: ${email}  <br><h4>${message}</h4>
-              <br> Sended by ${name}</p><br>`
+              <br> Sended by ${name}</p><br>
+              <P>Thank you ...</P>`
             })
         //send response
         res.status(200).json({
